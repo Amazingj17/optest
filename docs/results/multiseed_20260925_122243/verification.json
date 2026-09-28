@@ -1,0 +1,45 @@
+{
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "checks": [
+    {
+      "seed": 2026,
+      "six_method_rows": 648,
+      "hybrid_rows": 432,
+      "valid_schedule_rate": 1.0,
+      "exact_minimum_selection": true,
+      "hrl_best_step": 864
+    },
+    {
+      "seed": 2027,
+      "six_method_rows": 648,
+      "hybrid_rows": 432,
+      "valid_schedule_rate": 1.0,
+      "exact_minimum_selection": true,
+      "hrl_best_step": 0
+    },
+    {
+      "seed": 2028,
+      "six_method_rows": 648,
+      "hybrid_rows": 432,
+      "valid_schedule_rate": 1.0,
+      "exact_minimum_selection": true,
+      "hrl_best_step": 0
+    }
+  ],
+  "total_training_episodes": 23328,
+  "total_training_transitions": 3464100,
+  "frozen_file_count": 121,
+  "source_differences": [],
+  "local_missing_frozen_files": [
+    "configs/main_gpu_smoke_seed2026.yaml",
+    "configs/main_gpu_smoke_seed2026b.yaml"
+  ],
+  "newline_only_differences": [
+    "data/manifests/grapheonrl_mixed_iid_seed7.json"
+  ],
+  "scope": "Stored artifacts and statistics checked; schedules were not re-executed; no test evaluation."
+}

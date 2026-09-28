@@ -1,0 +1,64 @@
+# Local development tools and agent workspaces
+/.idea/
+/.vscode/
+/.agents/
+/.codex/
+
+# Python environments, caches, tests and build products
+__pycache__/
+*.py[cod]
+/.venv/
+/venv/
+/env/
+/.pytest_cache/
+/.pytest_scratch/
+/.pytest_tmp/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.egg-info/
+/build/
+/dist/
+.ipynb_checkpoints/
+
+# Generated experiments, checkpoints and datasets stay local.
+# Curated lightweight results are versioned under docs/results/.
+/outputs/
+/data/raw/**
+!/data/raw/zenodo-18927122-derived/
+!/data/raw/zenodo-18927122-derived/README.md
+/data/processed/
+/data/cache/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.log
+*.pid
+
+# Local credentials; sanitized examples may be committed.
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+
+# Downloaded reference paper, temporary files and OS metadata
+/doc/CPN-HRL.pdf
+*.tmp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini

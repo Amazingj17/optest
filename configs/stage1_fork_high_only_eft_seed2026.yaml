@@ -1,0 +1,128 @@
+# Stage-one fork branch A: continue high-level-only training with the fixed
+# minimum-EFT low level.  This is a NEW experiment initialized from a completed
+# checkpoint, not an exact resume: model and optimizer state are restored, the
+# RNG stream and scenario permutation restart from `experiment.seed`, and both
+# schedulers are rebuilt for this experiment's own budget (fork.scheduler_restore).
+#
+# Fork from the completed first training epoch of the formal main run.  That
+# checkpoint is `best.pt` at global_step 864, NOT `latest.pt`:
+#   best.pt   global_step=864  (first high_train coverage epoch; selected best)
+#   latest.pt global_step=2592 (end of all three epochs, joint-trained low level)
+# Both files carry best_validation_ratio=0.9995307, so the step number and the
+# low-level weights are the only way to tell them apart:
+#   outputs/gpu/outputs/all_models_seed2026/training/residual_hrl/best.pt
+#     -> high actor trained (128 non-zero weights)
+#     -> low actor output layer still exactly zero (low level never trained)
+# Forking from `latest.pt` instead would fork a jointly trained model and would
+# no longer isolate the high-level-only continuation.
+#
+# Budget: 1728 episodes = 2 further complete coverage epochs of the 864-scenario
+# training split, which is exactly the remaining budget of the formal run.
+# Run with:
+#   python scripts/train_main_comparison.py \
+#     --config configs/stage1_fork_high_only_eft_seed2026.yaml \
+#     --fork-from <source checkpoint>
+experiment:
+  name: residual_hrl_fork_high_only_eft_seed2026
+  seed: 2026
+
+dataset:
+  roots:
+    grapheonrl: data/raw/zenodo-18927122-derived
+  grapheonrl_system_configs: data/raw/zenodo-18927122-derived
+  archive_task_counts: [50, 100, 300]
+  split_manifest: data/manifests/grapheonrl_mixed_iid_seed7.json
+
+resources:
+  mode: dataset
+
+environment:
+  normalize_observations: true
+
+model:
+  high:
+    hidden_dim: 128
+    learning_rate: 0.0001
+    use_lstm: true
+    include_heft_features: true
+    heuristic_residual: true
+    heuristic_weight: 8.0
+    residual_limit: 0.5
+  low:
+    hidden_dim: 64
+    heads: 4
+    learning_rate: 0.00005
+    use_gat: true
+    heuristic_residual: true
+    heuristic_weight: 8.0
+    residual_limit: 0.5
+
+training:
+  # Explicit phase schedule. `high_only_eft` samples the high level with PPO and
+  # selects the low level with the fixed minimum-EFT rule; the low network,
+  # optimizer and scheduler are never touched.
+  phases:
+    - {name: high_only_eft, episodes: 1728}
+  coverage_epochs: 2
+  low_pretrain_episodes: 0
+  high_train_episodes: 0
+  joint_train_episodes: 0
+  # Stage-one per-episode diagnostics (entropy, deviation rates, EFT gaps,
+  # PPO KL/loss/clip/explained variance, optimizer-update counts).
+  diagnostics: true
+  evaluation_interval: 864
+  early_stop_patience: 4
+  ppo:
+    gamma_high: 1.0
+    gae_lambda_high: 0.95
+    gamma_low: 1.0
+    gae_lambda_low: 0.95
+    clip_coef: 0.1
+    entropy_coef_high: 0.001
+    entropy_coef_low: 0.001
+    update_epochs: 2
+    batch_size: 128
+    target_kl: 0.01
+    value_clip_coef: 0.2
+    lr_end_factor: 0.2
+    max_grad_norm: 0.5
+
+# Restore optimizer state from the fork checkpoint, but rebuild both learning
+# rate schedulers for this experiment's own total step budget. Never implicit.
+fork:
+  scheduler_restore: fresh
+  optimizer_restore: restore
+  require_checkpoint: true
+  expected_source_step: 864
+
+bc:
+  enabled: false
+  epochs: 1
+  max_scenarios: 24
+
+curriculum:
+  stages: []
+
+reward:
+  type: normalized_makespan_delta
+  communication_weight: 0.0
+  potential_based: false
+  potential_gamma: 1.0
+
+evaluation:
+  deterministic: true
+  evaluate_initial: true
+  proxy_scenarios: 0
+  bootstrap_samples: 1000
+
+portfolio:
+  perturbation_candidates: 16
+  task_top_k: 2
+  node_top_k: 2
+  alternative_node_probability: 0.15
+
+output_dir: outputs/stage1_forks_seed2026/high_only_eft
+device: cuda
+device_options:
+  disable_cudnn: true
+torch_num_threads: 4
