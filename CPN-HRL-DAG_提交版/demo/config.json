@@ -1,0 +1,40 @@
+{
+  "seed": 2026,
+  "checkpoint": "assets/hrl_best.pt",
+  "scenarios": "assets/scenarios.json",
+  "template": "assets/template.html",
+  "search": {
+    "include_peft": true,
+    "peft_lookahead_weights": [
+      0.0,
+      0.25
+    ],
+    "include_cpop": false,
+    "heft_communication_scales": [
+      0.0,
+      0.25,
+      2.0,
+      4.0
+    ],
+    "task_discrepancy_candidates": 0,
+    "node_discrepancy_candidates": 1,
+    "perturbation_candidates": 16,
+    "task_top_k": 2,
+    "node_top_k": 2,
+    "alternative_node_probability": 0.15,
+    "local_search_rounds": 3,
+    "local_search_critical_tasks": 8,
+    "local_search_node_alternatives": 2,
+    "local_search_task_alternatives": 1,
+    "local_search_beam_width": 3,
+    "local_search_prefix_cache": true,
+    "local_search_block_rounds": 2,
+    "local_search_blocks": 4,
+    "local_search_block_max_size": 3,
+    "local_search_block_node_alternatives": 2
+  },
+  "baseline_checkpoints": {
+    "graph_ppo": "assets/graph_ppo_best.pt",
+    "tier_mappo": "assets/tier_mappo_best.pt"
+  }
+}

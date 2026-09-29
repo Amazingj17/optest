@@ -1,0 +1,37 @@
+{
+  "format": "cpn-hybrid-demo-v1",
+  "files": {
+    "assets/hrl_best.pt": "86da1395f7e637cce803f40b4bfc3dd8380e95914d32ddd83aefad2d4ff9811a",
+    "assets/scenarios.json": "262a68bbeaba28b1563eb2e1e324ed830568008d7d03349a22459e80cc805830",
+    "assets/template.html": "4ae9ad632c260e634ae9cd68b9846f4086b9b5a11258d2417434750db4a70159",
+    "config.json": "7ee12d636b1bae0df93b275c6c7fcfd17ddc75dd32d97171c2893f196041b937",
+    "assets/graph_ppo_best.pt": "c9acd09fda8f78d3c03d435a304e0b4e7dfdb7329cc44b084af3ef98d3362ab2",
+    "assets/tier_mappo_best.pt": "9054682b0799344f332148725bc488a5774b96ff8403f1b497f7a7248aedc3fd"
+  },
+  "provenance": {
+    "checkpoint_source": "outputs/gpu/outputs/multiseed_20260925_122243/all_models_seed2026/training/residual_hrl/best.pt",
+    "checkpoint_step": 864,
+    "search_config_sha256": "87be47575f42c06e19203daad2c96c35e33e4f6bd1d1c61e0fd0dbf2f2d7bf69",
+    "split_manifest_sha256": "421315d01e2c7336a3f812e1ce8b39a491f4a7e5390519dd33fe2ca90c955bca",
+    "dataset_url": "https://zenodo.org/records/18927122",
+    "dataset_attribution": "GrapheonRL benchmark, Aasish Kumar Sharma; STG-derived scheduling instances",
+    "dataset_license": "CC-BY-4.0",
+    "transformation": "Six canonical scenarios serialized from the existing dataset adapter; source metadata retained",
+    "selection": "First lexicographic validation scenario per 50/100/300 task count and heterogeneous/homogeneous group",
+    "selected_scenarios": [
+      "grapheonrl:rnc50:rand0000:heterogeneous",
+      "grapheonrl:rnc50:rand0000:homogeneous",
+      "grapheonrl:rnc100:rand0013:heterogeneous",
+      "grapheonrl:rnc100:rand0013:homogeneous",
+      "grapheonrl:rnc300:rand0000:heterogeneous",
+      "grapheonrl:rnc300:rand0000:homogeneous"
+    ],
+    "source_split": "validation",
+    "formal_validation_scene_count": 108,
+    "validation_used_for_model_selection": true,
+    "baseline_checkpoint_sources": {
+      "graph_ppo": "outputs/gpu/outputs/multiseed_20260925_122243/all_models_seed2026/training/graph_ppo/best.pt",
+      "tier_mappo": "outputs/gpu/outputs/multiseed_20260925_122243/all_models_seed2026/training/tier_mappo/best.pt"
+    }
+  }
+}

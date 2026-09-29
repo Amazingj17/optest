@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    "all bundled scene options render",
+    "scene 1: metrics, DAG, four strategy timelines and task details",
+    "scene 2: metrics, DAG, four strategy timelines and task details",
+    "scene 3: metrics, DAG, four strategy timelines and task details",
+    "scene 4: metrics, DAG, four strategy timelines and task details",
+    "scene 5: metrics, DAG, four strategy timelines and task details",
+    "scene 6: metrics, DAG, four strategy timelines and task details",
+    "all task-size and resource-type filters",
+    "play, pause, slider and timeline cursor"
+  ],
+  "js_errors": [],
+  "scope": "jsdom interaction verification; browser visual rendering not checked"
+}

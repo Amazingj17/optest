@@ -1,0 +1,57 @@
+experiment:
+  name: zenodo_dag_pair_residual_distill_smoke_2026
+  seed: 2026
+
+dataset:
+  roots:
+    grapheonrl: data/raw/zenodo-18927122-derived
+  grapheonrl_system_configs: data/raw/zenodo-18927122-derived
+  archive_task_counts: [50, 100, 300]
+  split_manifest: data/manifests/grapheonrl_mixed_iid_seed7.json
+  sampling: {grapheonrl: 1.0}
+
+resources:
+  mode: dataset
+
+model:
+  dag_pair:
+    hidden_dim: 32
+    heads: 4
+    task_layers: 2
+    resource_layers: 1
+    dropout: 0.0
+    heuristic_residual: true
+    residual_limit: 2.0
+    heuristic_scale: 0.05
+
+distillation:
+  train_scenarios: 12
+  validation_scenarios: 6
+  epochs: 8
+  states_per_scenario: 16
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  value_weight: 0.2
+  max_grad_norm: 1.0
+  disagreement_weight: 3.0
+
+search:
+  include_peft: true
+  peft_lookahead_weights: [0.0, 0.25]
+  include_cpop: false
+  heft_communication_scales: [0.0, 0.25, 2.0, 4.0]
+  task_discrepancy_candidates: 0
+  node_discrepancy_candidates: 1
+  perturbation_candidates: 16
+  task_top_k: 2
+  node_top_k: 2
+  alternative_node_probability: 0.15
+  local_search_rounds: 2
+  local_search_critical_tasks: 4
+  local_search_node_alternatives: 1
+
+evaluation:
+  bootstrap_samples: 0
+
+output_dir: outputs/zenodo_dag_pair_residual_distill_smoke_2026
+device: auto

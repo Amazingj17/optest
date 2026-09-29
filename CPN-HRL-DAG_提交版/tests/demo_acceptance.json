@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "demo_scenarios": 6,
+  "methods": [
+    "HEFT",
+    "GraphPPO",
+    "TierMAPPO",
+    "HRL 组合搜索"
+  ],
+  "valid_schedule_rate": 1.0,
+  "pytest_passed": 14,
+  "browser_timeline_checks": 24,
+  "viewer": "demo/index.html",
+  "results": "demo/verified_comparison/results.json",
+  "scope": "Six fixed demonstration scenes; all four methods computed with bundled weights and identical inputs; not the full validation score"
+}

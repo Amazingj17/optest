@@ -1,0 +1,6 @@
+{"completed": 1, "total": 6, "scenario_id": "grapheonrl:rnc50:rand0000:heterogeneous", "ratio": 0.999006812637245, "selected_source": "search_blocks", "inference_ms": 956.4836999998079}
+{"completed": 2, "total": 6, "scenario_id": "grapheonrl:rnc50:rand0000:homogeneous", "ratio": 0.9996510192965736, "selected_source": "search_blocks", "inference_ms": 670.6515000000763}
+{"completed": 3, "total": 6, "scenario_id": "grapheonrl:rnc100:rand0013:heterogeneous", "ratio": 0.7578441744015385, "selected_source": "search_blocks", "inference_ms": 3590.602299999773}
+{"completed": 4, "total": 6, "scenario_id": "grapheonrl:rnc100:rand0013:homogeneous", "ratio": 0.9953091892745982, "selected_source": "search_blocks", "inference_ms": 2278.9389999998093}
+{"completed": 5, "total": 6, "scenario_id": "grapheonrl:rnc300:rand0000:heterogeneous", "ratio": 0.929929563657132, "selected_source": "search_blocks", "inference_ms": 25744.302099999913}
+{"completed": 6, "total": 6, "scenario_id": "grapheonrl:rnc300:rand0000:homogeneous", "ratio": 0.9966359571390444, "selected_source": "search_blocks", "inference_ms": 31390.468800000235}

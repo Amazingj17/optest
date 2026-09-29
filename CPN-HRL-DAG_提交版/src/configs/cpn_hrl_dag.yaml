@@ -1,0 +1,29 @@
+experiment:
+  name: cpn_hrl_dag_smoke
+  seed: 7
+dataset:
+  roots:
+    grapheonrl: data/raw/zenodo-18927122-derived
+  grapheonrl_system_configs: data/raw/zenodo-18927122-derived
+  archive_task_counts: [50, 100, 300]
+  limit_per_dataset: 3
+  split_manifest: data/manifests/grapheonrl_mixed_iid_seed7.json
+  sampling: {grapheonrl: 1.0}
+model:
+  high: {hidden_dim: 128, learning_rate: 0.001, use_lstm: true, include_heft_features: true}
+  low: {hidden_dim: 64, heads: 4, learning_rate: 0.0005, use_gat: true}
+training:
+  low_pretrain_episodes: 1
+  joint_train_episodes: 1
+  evaluation_interval: 1
+  early_stop_patience: 10
+  ppo: {gamma_high: 0.99, gae_lambda_high: 0.95, gamma_low: 0.95, gae_lambda_low: 0.90, clip_coef: 0.2, entropy_coef_high: 0.01, entropy_coef_low: 0.02, update_epochs: 4, batch_size: 64, lr_end_factor: 0.1, max_grad_norm: 1.0}
+evaluation: {split: validation, deterministic: true, bootstrap_samples: 0}
+bc: {enabled: false, epochs: 1}
+curriculum: {stages: []}
+resources:
+  # Set generated/hybrid plus an explicit config to enable reproducible dynamic resources.
+  mode: dataset
+reward: {communication_weight: 0.0, potential_based: false, potential_gamma: 0.99}
+output_dir: outputs/cpn_hrl_dag_smoke
+device: cpu

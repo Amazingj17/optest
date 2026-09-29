@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "scenario_id": "grapheonrl:rnc50:rand0000:heterogeneous",
+      "repeat": 0,
+      "baseline_ms": 1003.5835000016959,
+      "reused_ms": 943.1994000005943,
+      "exact_trajectories": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc50:rand0000:heterogeneous",
+      "repeat": 1,
+      "baseline_ms": 1005.0941999998031,
+      "reused_ms": 948.4230999987631,
+      "exact_trajectories": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc50:rand0000:heterogeneous",
+      "repeat": 2,
+      "baseline_ms": 956.369800000175,
+      "reused_ms": 936.4842000013596,
+      "exact_trajectories": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc100:rand0013:heterogeneous",
+      "repeat": 0,
+      "baseline_ms": 4523.740599999655,
+      "reused_ms": 4471.594200000254,
+      "exact_trajectories": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc100:rand0013:heterogeneous",
+      "repeat": 1,
+      "baseline_ms": 4214.242600000944,
+      "reused_ms": 5333.503099998779,
+      "exact_trajectories": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc100:rand0013:heterogeneous",
+      "repeat": 2,
+      "baseline_ms": 4314.163900000494,
+      "reused_ms": 4146.706499999709,
+      "exact_trajectories": true
+    }
+  ],
+  "median_paired_speedup": 1.030808771953803,
+  "baseline_median_ms": 2609.6684000003734,
+  "reused_median_ms": 2547.564799999236,
+  "exact_trajectories": true,
+  "scenes": 2,
+  "repeats": 3,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.12",
+  "torch": "2.9.1+cu130",
+  "threads": 1,
+  "checkpoint_sha256": "86da1395f7e637cce803f40b4bfc3dd8380e95914d32ddd83aefad2d4ff9811a",
+  "timing": "hybrid inference includes all candidate setup, generation, validation and replay",
+  "note": "Local warm-process alternating paired timings; not a cross-hardware performance claim"
+}

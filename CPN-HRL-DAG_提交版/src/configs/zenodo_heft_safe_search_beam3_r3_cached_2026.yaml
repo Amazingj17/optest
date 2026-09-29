@@ -1,0 +1,48 @@
+experiment:
+  name: zenodo_heft_safe_search_beam3_r3_cached_2026
+  seed: 2026
+
+dataset:
+  roots:
+    grapheonrl: data/raw/zenodo-18927122-derived
+  grapheonrl_system_configs: data/raw/zenodo-18927122-derived
+  archive_task_counts: [50, 100, 300]
+  split_manifest: data/manifests/grapheonrl_mixed_iid_seed7.json
+  sampling: {grapheonrl: 1.0}
+
+resources:
+  mode: dataset
+
+environment:
+  ready_semantics: list_schedule
+  insertion_scheduling: true
+  normalize_observations: true
+
+model:
+  high:
+    include_heft_features: true
+
+evaluation:
+  deterministic: true
+  bootstrap_samples: 1000
+
+search:
+  include_peft: true
+  peft_lookahead_weights: [0.0, 0.25]
+  include_cpop: false
+  heft_communication_scales: [0.0, 0.25, 2.0, 4.0]
+  task_discrepancy_candidates: 0
+  node_discrepancy_candidates: 1
+  perturbation_candidates: 16
+  task_top_k: 2
+  node_top_k: 2
+  alternative_node_probability: 0.15
+  local_search_rounds: 3
+  local_search_critical_tasks: 8
+  local_search_node_alternatives: 2
+  local_search_task_alternatives: 1
+  local_search_beam_width: 3
+  local_search_prefix_cache: true
+
+output_dir: outputs/zenodo_heft_safe_search_beam3_r3_cached_2026
+device: cpu

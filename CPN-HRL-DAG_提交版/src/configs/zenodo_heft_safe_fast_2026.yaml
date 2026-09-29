@@ -1,0 +1,92 @@
+experiment:
+  name: zenodo_heft_safe_fast_2026
+  seed: 2026
+
+dataset:
+  roots:
+    grapheonrl: data/raw/zenodo-18927122-derived
+  grapheonrl_system_configs: data/raw/zenodo-18927122-derived
+  archive_task_counts: [50, 100, 300]
+  split_manifest: data/manifests/grapheonrl_mixed_iid_seed7.json
+  sampling: {grapheonrl: 1.0}
+
+resources:
+  mode: dataset
+
+environment:
+  ready_semantics: list_schedule
+  insertion_scheduling: true
+  normalize_observations: true
+
+model:
+  high:
+    hidden_dim: 128
+    learning_rate: 0.0001
+    use_lstm: true
+    include_heft_features: true
+    heuristic_residual: true
+    heuristic_weight: 8.0
+    residual_limit: 0.5
+  low:
+    hidden_dim: 64
+    heads: 4
+    learning_rate: 0.00005
+    use_gat: true
+    heuristic_residual: true
+    heuristic_weight: 8.0
+    residual_limit: 0.5
+
+training:
+  low_pretrain_episodes: 0
+  high_train_episodes: 75
+  joint_train_episodes: 75
+  evaluation_interval: 25
+  early_stop_patience: 4
+  ppo:
+    gamma_high: 1.0
+    gae_lambda_high: 0.95
+    gamma_low: 1.0
+    gae_lambda_low: 0.95
+    clip_coef: 0.1
+    entropy_coef_high: 0.001
+    entropy_coef_low: 0.001
+    update_epochs: 2
+    batch_size: 128
+    target_kl: 0.01
+    value_clip_coef: 0.2
+    lr_end_factor: 0.2
+    max_grad_norm: 0.5
+
+# Optional because residual initialization already reproduces HEFT exactly.
+bc:
+  enabled: false
+  epochs: 1
+  max_scenarios: 24
+
+curriculum:
+  stages:
+    - {min_tasks: 50, max_tasks: 100, episodes: 75}
+    - {min_tasks: 50, max_tasks: 300, episodes: 75}
+
+reward:
+  type: normalized_makespan_delta
+  communication_weight: 0.0
+  potential_based: false
+  potential_gamma: 1.0
+
+evaluation:
+  deterministic: true
+  evaluate_initial: true
+  proxy_scenarios: 18
+  bootstrap_samples: 1000
+
+portfolio:
+  perturbation_candidates: 16
+  task_top_k: 2
+  node_top_k: 2
+  alternative_node_probability: 0.15
+
+output_dir: outputs/zenodo_heft_safe_fast_2026
+device: cuda
+device_options:
+  disable_cudnn: true

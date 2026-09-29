@@ -1,0 +1,27 @@
+{
+  "num_scenarios": 6,
+  "methods": {
+    "heft": {
+      "mean_ratio": 1.0,
+      "mean_inference_ms": 260.7210666665954,
+      "p95_inference_ms": 731.0423499998251
+    },
+    "graph_ppo": {
+      "mean_ratio": 1.0450163586985948,
+      "mean_inference_ms": 1388.4435499999956,
+      "p95_inference_ms": 4015.636424999798
+    },
+    "tier_mappo": {
+      "mean_ratio": 1.183441280065021,
+      "mean_inference_ms": 1793.4090333333188,
+      "p95_inference_ms": 5054.855099999827
+    },
+    "hybrid": {
+      "mean_ratio": 0.9463961194010221,
+      "mean_inference_ms": 10771.907899999935,
+      "p95_inference_ms": 29978.927125000155
+    }
+  },
+  "valid_schedule_rate": 1.0,
+  "scope": "fixed demonstration subset; not the full 108-scene validation score"
+}

@@ -167,6 +167,18 @@ validation, or test even when it has multiple resource realizations.
 
 ## Install and run
 
+### openEuler CPU acceptance
+
+An openEuler 24.03 LTS-SP4 container recipe and an auditable acceptance runner
+are available in the [openEuler guide](doc/openEuler容器适配与验收.md).
+The runner checks the actual OS, executes the full test suite, performs two real
+training episodes, reloads the saved checkpoint in a new process and evaluates
+all 108 validation scenarios. It can also evaluate an existing frozen HRL model.
+Container evidence is labelled separately from future VM/native evidence.
+Raw data and trained weights are mounted separately and excluded from images.
+
+### Existing training workflows
+
 For server training of all three neural models, live logs, and the six-policy
 full-validation comparison, use `scripts/run_server_comparison.py`.
 Start with `--output outputs/server_run --gpus 1 --dry-run`; remove `--dry-run`

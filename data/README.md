@@ -10,9 +10,12 @@ For the default 50/100/300-task experiments, place the archives at:
 ```text
 data/raw/zenodo-18927122-derived/
   system_configs.tar.xz
-  rnc50_json.tar.xz
-  rnc100_json.tar.xz
-  rnc300_json.tar.xz
+  rnc50_homo_json.tar.xz
+  rnc50_hetero_json.tar.xz
+  rnc100_homo_json.tar.xz
+  rnc100_hetero_json.tar.xz
+  rnc300_homo_json.tar.xz
+  rnc300_hetero_json.tar.xz
 ```
 
 The adapter reads archive members directly. Validate the local layout with:

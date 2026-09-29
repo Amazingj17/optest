@@ -1,0 +1,133 @@
+{
+  "source": "multiseed_20260925_122243/hybrid_seed2026/candidate_audit.csv",
+  "checks": [
+    {
+      "scenario_id": "grapheonrl:rnc50:rand0000:heterogeneous",
+      "candidate": "heft",
+      "archived_makespan": 60.516625647830004,
+      "current_makespan": 60.516625647830004,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc50:rand0000:heterogeneous",
+      "candidate": "search_blocks",
+      "archived_makespan": 60.456521300000006,
+      "current_makespan": 60.456521300000006,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc50:rand0000:heterogeneous",
+      "candidate": "residual_hrl",
+      "archived_makespan": 60.516625647830004,
+      "current_makespan": 60.516625647830004,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc50:rand0000:homogeneous",
+      "candidate": "heft",
+      "archived_makespan": 172.23401534783,
+      "current_makespan": 172.23401534783,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc50:rand0000:homogeneous",
+      "candidate": "search_blocks",
+      "archived_makespan": 172.17390899999995,
+      "current_makespan": 172.17390899999995,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc50:rand0000:homogeneous",
+      "candidate": "residual_hrl",
+      "archived_makespan": 172.17391099999998,
+      "current_makespan": 172.17391099999998,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc100:rand0013:heterogeneous",
+      "candidate": "heft",
+      "archived_makespan": 156.17232073776,
+      "current_makespan": 156.17232073776,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc100:rand0013:heterogeneous",
+      "candidate": "search_blocks",
+      "archived_makespan": 118.35428347388,
+      "current_makespan": 118.35428347388,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc100:rand0013:heterogeneous",
+      "candidate": "residual_hrl",
+      "archived_makespan": 159.24879279123002,
+      "current_makespan": 159.24879279123002,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc100:rand0013:homogeneous",
+      "candidate": "heft",
+      "archived_makespan": 393.1676979999999,
+      "current_makespan": 393.1676979999999,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc100:rand0013:homogeneous",
+      "candidate": "search_blocks",
+      "archived_makespan": 391.32342274534,
+      "current_makespan": 391.32342274534,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc100:rand0013:homogeneous",
+      "candidate": "residual_hrl",
+      "archived_makespan": 393.16769800000003,
+      "current_makespan": 393.16769800000003,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc300:rand0000:heterogeneous",
+      "candidate": "heft",
+      "archived_makespan": 589.2644355621003,
+      "current_makespan": 589.2644355621003,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc300:rand0000:heterogeneous",
+      "candidate": "search_blocks",
+      "archived_makespan": 547.9744194409301,
+      "current_makespan": 547.9744194409301,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc300:rand0000:heterogeneous",
+      "candidate": "residual_hrl",
+      "archived_makespan": 590.7682156006803,
+      "current_makespan": 590.7682156006803,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc300:rand0000:homogeneous",
+      "candidate": "heft",
+      "archived_makespan": 1015.5384503779502,
+      "current_makespan": 1015.5384503779502,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc300:rand0000:homogeneous",
+      "candidate": "search_blocks",
+      "archived_makespan": 1012.1221355039304,
+      "current_makespan": 1012.1221355039304,
+      "matched": true
+    },
+    {
+      "scenario_id": "grapheonrl:rnc300:rand0000:homogeneous",
+      "candidate": "residual_hrl",
+      "archived_makespan": 1028.0670165039303,
+      "current_makespan": 1028.0670165039303,
+      "matched": true
+    }
+  ],
+  "all_matched": true,
+  "note": "Cross-platform makespans agree within 1e-9; elapsed times are measured anew."
+}

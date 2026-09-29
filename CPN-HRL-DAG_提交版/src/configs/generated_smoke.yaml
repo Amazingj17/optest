@@ -1,0 +1,48 @@
+experiment: {name: generated_smoke, seed: 7}
+dataset:
+  roots: {grapheonrl: data/raw/zenodo-18927122-derived}
+  grapheonrl_system_configs: data/raw/zenodo-18927122-derived
+  archive_task_counts: [50, 100, 300]
+  limit_per_dataset: 3
+  split_manifest: data/manifests/grapheonrl_mixed_iid_seed7.json
+  sampling: {grapheonrl: 1.0}
+resources:
+  mode: generated
+  train_seeds: [101]
+  validation_seeds: [201]
+  test_seeds: [301]
+  config:
+    config_id: generated_smoke
+    cloud: {count: [2, 2], speed: [8.0, 8.0], cpu_capacity: [10000, 10000], gpu_capacity: [10000, 10000], memory_capacity: [100000000, 100000000]}
+    edge: {count: [1, 1], speed: [4.0, 4.0], cpu_capacity: [10000, 10000], gpu_capacity: [10000, 10000], memory_capacity: [100000000, 100000000]}
+    end: {count: [1, 1], speed: [2.0, 2.0], cpu_capacity: [10000, 10000], gpu_capacity: [10000, 10000], memory_capacity: [100000000, 100000000]}
+    bandwidth:
+      cloud_cloud: [100, 100]
+      cloud_edge: [50, 50]
+      cloud_end: [20, 20]
+      edge_edge: [40, 40]
+      edge_end: [15, 15]
+      end_end: [10, 10]
+    latency:
+      cloud_cloud: [0.1, 0.1]
+      cloud_edge: [1, 1]
+      cloud_end: [5, 5]
+      edge_edge: [1, 1]
+      edge_end: [2, 2]
+      end_end: [1, 1]
+model:
+  high: {hidden_dim: 32, learning_rate: 0.001}
+  low: {hidden_dim: 32, heads: 2, learning_rate: 0.0005}
+training:
+  low_pretrain_episodes: 1
+  joint_train_episodes: 1
+  evaluation_interval: 1
+  early_stop_patience: 5
+  ppo: {gamma_high: 0.99, gae_lambda_high: 0.95, gamma_low: 0.95, gae_lambda_low: 0.90, clip_coef: 0.2, entropy_coef_high: 0.01, entropy_coef_low: 0.02, update_epochs: 1, batch_size: 32, lr_end_factor: 0.1, max_grad_norm: 1.0}
+reward: {communication_weight: 0.0, potential_based: false, potential_gamma: 0.99}
+evaluation: {split: validation, deterministic: true, bootstrap_samples: 0}
+bc: {enabled: false, epochs: 1}
+curriculum: {stages: []}
+flat: {hidden_dim: 32, learning_rate: 0.0005, episodes: 2, output_dir: outputs/flat_smoke}
+output_dir: outputs/generated_smoke
+device: cpu
