@@ -1,0 +1,25 @@
+{
+  "better_than_heft_rate": 0.0,
+  "config_hash": "59df6caeb0a57bd2d884f7ec61494ef2e4f6d13170f0bfeebc0d24a299e66cee",
+  "datasets": [
+    "grapheonrl"
+  ],
+  "equal_to_heft_rate": 1.0,
+  "max_ratio": 1.0000000000000002,
+  "mean_heft_makespan": 399.6990669514217,
+  "mean_inference_time_ms": 479.3801775833631,
+  "mean_makespan": 399.6990669514217,
+  "mean_ratio": 1.0,
+  "median_ratio": 1.0,
+  "min_ratio": 1.0,
+  "model": "heft",
+  "num_base_dags": 54,
+  "num_scenarios": 108,
+  "p90_ratio": 1.0,
+  "seed": 2026,
+  "split": "validation",
+  "std_makespan": 332.8225483063839,
+  "std_ratio": 2.136625207092849e-17,
+  "training_time_seconds": 0.0,
+  "valid_schedule_rate": 1.0
+}

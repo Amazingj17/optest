@@ -1,0 +1,191 @@
+{
+  "status": "passed",
+  "started_at": "2026-09-30T14:35:18.413652+00:00",
+  "execution_kind": "vm",
+  "scope": "CPU platform acceptance; two-episode training is not a performance result",
+  "test_evaluated": false,
+  "stages": [
+    {
+      "name": "dependency_check",
+      "command": [
+        "/root/optest/.venv-openeuler/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "started_at": "2026-09-30T14:35:18.677168+00:00",
+      "status": "passed",
+      "returncode": 0,
+      "finished_at": "2026-09-30T14:35:19.276884+00:00"
+    },
+    {
+      "name": "dataset_check",
+      "command": [
+        "/root/optest/.venv-openeuler/bin/python",
+        "scripts/prepare_data.py"
+      ],
+      "started_at": "2026-09-30T14:35:19.277319+00:00",
+      "status": "passed",
+      "returncode": 0,
+      "finished_at": "2026-09-30T14:35:19.317730+00:00"
+    },
+    {
+      "name": "pytest",
+      "command": [
+        "/root/optest/.venv-openeuler/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml",
+        "/root/optest/outputs/platform/openeuler_vm_20260930/pytest.xml"
+      ],
+      "started_at": "2026-09-30T14:35:19.323335+00:00",
+      "status": "passed",
+      "returncode": 0,
+      "finished_at": "2026-09-30T14:36:15.033646+00:00"
+    },
+    {
+      "name": "short_training",
+      "command": [
+        "/root/optest/.venv-openeuler/bin/python",
+        "scripts/train_main_comparison.py",
+        "--config",
+        "/root/optest/outputs/platform/openeuler_vm_20260930/smoke_config.yaml"
+      ],
+      "started_at": "2026-09-30T14:36:15.074753+00:00",
+      "status": "passed",
+      "returncode": 0,
+      "finished_at": "2026-09-30T14:43:23.285995+00:00"
+    },
+    {
+      "name": "checkpoint_reload",
+      "command": [
+        "/root/optest/.venv-openeuler/bin/python",
+        "scripts/evaluate.py",
+        "--config",
+        "/root/optest/outputs/platform/openeuler_vm_20260930/checkpoint_reload_config.yaml",
+        "--policy",
+        "hrl",
+        "--split",
+        "validation",
+        "--checkpoint",
+        "/root/optest/outputs/platform/openeuler_vm_20260930/smoke_training/best.pt"
+      ],
+      "started_at": "2026-09-30T14:43:23.294422+00:00",
+      "status": "passed",
+      "returncode": 0,
+      "finished_at": "2026-09-30T14:47:41.439500+00:00"
+    },
+    {
+      "name": "heft_validation",
+      "command": [
+        "/root/optest/.venv-openeuler/bin/python",
+        "scripts/evaluate.py",
+        "--config",
+        "/root/optest/outputs/platform/openeuler_vm_20260930/heft_validation_config.yaml",
+        "--policy",
+        "heft",
+        "--split",
+        "validation"
+      ],
+      "started_at": "2026-09-30T14:47:41.451355+00:00",
+      "status": "passed",
+      "returncode": 0,
+      "finished_at": "2026-09-30T14:51:17.570598+00:00"
+    }
+  ],
+  "smoke_training": {
+    "better_than_heft_rate": 0.4444444444444444,
+    "config_hash": "9b6b1a523fd887a97685a450408f5c2fcf3b8ca68f7da886a0de4e991cc60cf7",
+    "coverage": 2,
+    "datasets": [
+      "grapheonrl"
+    ],
+    "diagnostics_enabled": true,
+    "equal_to_heft_rate": 0.2037037037037037,
+    "fork_source": null,
+    "matched_scenario_coverage": "episode_budget_identical_across_fork_branches",
+    "max_ratio": 1.0385710428999295,
+    "mean_heft_makespan": 399.6990669514217,
+    "mean_inference_time_ms": 823.4918322499971,
+    "mean_makespan": 399.76897124207545,
+    "mean_ratio": 0.9996353632803595,
+    "median_ratio": 1.0,
+    "min_ratio": 0.972072383499923,
+    "model": "CPN-HRL-DAG",
+    "num_base_dags": 54,
+    "num_scenarios": 108,
+    "optimizer_update_unit": "optimizer.step minibatches",
+    "optimizer_updates_high": 14,
+    "optimizer_updates_low": 10,
+    "p90_ratio": 1.0032619232631497,
+    "ppo_update_calls": {
+      "high": 2,
+      "low": 1
+    },
+    "scheduler_steps_high": 2,
+    "scheduler_steps_low": 1,
+    "seed": 2026,
+    "selected_step": 2,
+    "split": "validation",
+    "std_makespan": 332.865179746972,
+    "std_ratio": 0.007000311217287099,
+    "training_episodes": 2,
+    "training_time_scope": "episode collection and PPO updates",
+    "training_time_seconds": 5.605858471999454,
+    "transitions": 400,
+    "valid_schedule_rate": 1.0
+  },
+  "checkpoint_reload": {
+    "better_than_heft_rate": 0.4444444444444444,
+    "config_hash": "94a543c42a284a5dca8bed1a129e05b7d99ef89819731fbaa0227dec5d337db1",
+    "datasets": [
+      "grapheonrl"
+    ],
+    "equal_to_heft_rate": 0.2037037037037037,
+    "max_ratio": 1.0385710428999295,
+    "mean_heft_makespan": 399.6990669514217,
+    "mean_inference_time_ms": 862.026594740735,
+    "mean_makespan": 399.76897124207545,
+    "mean_ratio": 0.9996353632803595,
+    "median_ratio": 1.0,
+    "min_ratio": 0.972072383499923,
+    "model": "cpn_hrl_dag",
+    "num_base_dags": 54,
+    "num_scenarios": 108,
+    "p90_ratio": 1.0032619232631497,
+    "seed": 2026,
+    "split": "validation",
+    "std_makespan": 332.865179746972,
+    "std_ratio": 0.007000311217287099,
+    "training_time_seconds": 0.0,
+    "valid_schedule_rate": 1.0
+  },
+  "checkpoint_reload_equal": true,
+  "heft_validation": {
+    "better_than_heft_rate": 0.0,
+    "config_hash": "59df6caeb0a57bd2d884f7ec61494ef2e4f6d13170f0bfeebc0d24a299e66cee",
+    "datasets": [
+      "grapheonrl"
+    ],
+    "equal_to_heft_rate": 1.0,
+    "max_ratio": 1.0000000000000002,
+    "mean_heft_makespan": 399.6990669514217,
+    "mean_inference_time_ms": 479.3801775833631,
+    "mean_makespan": 399.6990669514217,
+    "mean_ratio": 1.0,
+    "median_ratio": 1.0,
+    "min_ratio": 1.0,
+    "model": "heft",
+    "num_base_dags": 54,
+    "num_scenarios": 108,
+    "p90_ratio": 1.0,
+    "seed": 2026,
+    "split": "validation",
+    "std_makespan": 332.8225483063839,
+    "std_ratio": 2.136625207092849e-17,
+    "training_time_seconds": 0.0,
+    "valid_schedule_rate": 1.0
+  },
+  "finished_at": "2026-09-30T14:51:17.573037+00:00"
+}

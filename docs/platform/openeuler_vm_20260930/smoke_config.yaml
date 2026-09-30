@@ -1,0 +1,73 @@
+experiment:
+  name: openeuler_cpu_smoke
+  seed: 2026
+dataset:
+  roots:
+    grapheonrl: data/raw/zenodo-18927122-derived
+  grapheonrl_system_configs: data/raw/zenodo-18927122-derived
+  archive_task_counts:
+  - 50
+  - 100
+  - 300
+  split_manifest: data/manifests/grapheonrl_mixed_iid_seed7.json
+resources:
+  mode: dataset
+environment:
+  normalize_observations: true
+model:
+  high:
+    hidden_dim: 16
+    learning_rate: 0.0001
+    use_lstm: true
+    include_heft_features: true
+    heuristic_residual: true
+    heuristic_weight: 8.0
+    residual_limit: 0.5
+  low:
+    hidden_dim: 8
+    heads: 2
+    learning_rate: 5.0e-05
+    use_gat: true
+    heuristic_residual: true
+    heuristic_weight: 8.0
+    residual_limit: 0.5
+training:
+  phases:
+  - name: high_only_eft
+    episodes: 1
+  - name: joint
+    episodes: 1
+  coverage_epochs: 0
+  low_pretrain_episodes: 0
+  high_train_episodes: 0
+  joint_train_episodes: 0
+  diagnostics: true
+  ppo:
+    gamma_high: 1.0
+    gae_lambda_high: 0.95
+    gamma_low: 1.0
+    gae_lambda_low: 0.95
+    clip_coef: 0.1
+    entropy_coef_high: 0.001
+    entropy_coef_low: 0.001
+    update_epochs: 1
+    batch_size: 32
+    target_kl: 0.01
+    value_clip_coef: 0.2
+    lr_end_factor: 0.2
+    max_grad_norm: 0.5
+reward:
+  type: normalized_makespan_delta
+  communication_weight: 0.0
+  potential_based: false
+  potential_gamma: 1.0
+evaluation:
+  deterministic: true
+  evaluate_initial: true
+  proxy_scenarios: 0
+  bootstrap_samples: 0
+output_dir: /root/optest/outputs/platform/openeuler_vm_20260930/smoke_training
+device: cpu
+device_options:
+  disable_cudnn: true
+torch_num_threads: 1

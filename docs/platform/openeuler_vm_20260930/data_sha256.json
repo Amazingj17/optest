@@ -1,0 +1,9 @@
+{
+  "system_configs.tar.xz": "e7dffcae3169b8b863bcad53a4c42d97e9b0e0dd6da812b7220ea86045fa4862",
+  "rnc50_hetero_json.tar.xz": "03bc163c13ae8601f8cb20ac1573746a5262c50edbf0c4e9e748968675ea5f7d",
+  "rnc50_homo_json.tar.xz": "24bba9f885dbdeba17465ed151259e775f5c05b29e5dcfdbc2fa51b788923aa1",
+  "rnc100_hetero_json.tar.xz": "8787298b71010daa771abff6aa920db86f8d2f178fc9ef1e9f4059834467d6e3",
+  "rnc100_homo_json.tar.xz": "cc3ad35903dd3c979ca0c8e14adb3198e51c5dbd0547a5afcc8d10f7d12420ed",
+  "rnc300_hetero_json.tar.xz": "84db0ae49dfd1cbd7c60a63118ae67cb21903d03411af4a086ccde9c427a8a7b",
+  "rnc300_homo_json.tar.xz": "08e65e77663f3a69884b107319870ffb63588db89965dedf8fb637c19f67e377"
+}
