@@ -1,0 +1,10 @@
+NAME="openKylin"
+FULL_NAME="openKylin"
+VERSION="2.0 SP2 (nile)"
+VERSION_US="2.0 SP2 (nile)"
+ID=openkylin
+PRETTY_NAME="openKylin 2.0 SP2"
+VERSION_ID="2.0"
+HOME_URL="https://www.openkylin.top/"
+VERSION_CODENAME=nile
+PRODUCT_FEATURES=3

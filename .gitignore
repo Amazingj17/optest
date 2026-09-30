@@ -66,3 +66,5 @@ Desktop.ini
 # Local staging / packaging artifacts kept out of version control
 /del/
 /决赛作品提交模板/
+
+/.venv-openkylin/

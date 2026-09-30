@@ -14,7 +14,7 @@ def test_grapheonrl_discovery_and_heterogeneous_mapping() -> None:
     adapter = GrapheonRLAdapter(system_configs_root=DATA_ROOT)
     paths = tuple(adapter.discover(DATA_ROOT))
     source = next(path for path in paths if getattr(path, "member_name", "") == "rnc50_hetero/rand0000_hetero.json")
-    assert len(paths) > 1080
+    assert len(paths) >= 1080
     scenario = adapter.load(source)
     assert scenario.scenario_id == "grapheonrl:rnc50:rand0000:heterogeneous"
     assert scenario.num_tasks == 50

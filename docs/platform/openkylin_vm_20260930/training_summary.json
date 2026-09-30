@@ -1,0 +1,42 @@
+{
+  "better_than_heft_rate": 0.4444444444444444,
+  "config_hash": "af3e2c3c0a3c530c518d54e4638a71ffae01b273261e8c5eddd9b49c08b9c207",
+  "coverage": 2,
+  "datasets": [
+    "grapheonrl"
+  ],
+  "diagnostics_enabled": true,
+  "equal_to_heft_rate": 0.2037037037037037,
+  "fork_source": null,
+  "matched_scenario_coverage": "episode_budget_identical_across_fork_branches",
+  "max_ratio": 1.0385710428999295,
+  "mean_heft_makespan": 399.6990669514217,
+  "mean_inference_time_ms": 825.4154454999937,
+  "mean_makespan": 399.76897124207545,
+  "mean_ratio": 0.9996353632803595,
+  "median_ratio": 1.0,
+  "min_ratio": 0.972072383499923,
+  "model": "CPN-HRL-DAG",
+  "num_base_dags": 54,
+  "num_scenarios": 108,
+  "optimizer_update_unit": "optimizer.step minibatches",
+  "optimizer_updates_high": 14,
+  "optimizer_updates_low": 10,
+  "p90_ratio": 1.0032619232631497,
+  "ppo_update_calls": {
+    "high": 2,
+    "low": 1
+  },
+  "scheduler_steps_high": 2,
+  "scheduler_steps_low": 1,
+  "seed": 2026,
+  "selected_step": 2,
+  "split": "validation",
+  "std_makespan": 332.865179746972,
+  "std_ratio": 0.007000311217287099,
+  "training_episodes": 2,
+  "training_time_scope": "episode collection and PPO updates",
+  "training_time_seconds": 5.214810323999927,
+  "transitions": 400,
+  "valid_schedule_rate": 1.0
+}
