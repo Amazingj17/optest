@@ -1,7 +1,0 @@
-# Native raw-data locations; all adapters retain source provenance.
-roots:
-  grapheonrl: data/raw/zenodo-18927122-derived
-grapheonrl_system_configs: data/raw/zenodo-18927122-derived
-archive_task_counts: [50, 100, 300]
-split_manifest: data/manifests/grapheonrl_mixed_iid_seed7.json
-sampling: {grapheonrl: 1.0}

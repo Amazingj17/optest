@@ -1,5 +1,0 @@
-# Three independent complete schedules; no retraining and no test evaluation.
-checkpoint: outputs/gpu/outputs/all_models_seed2026/training/residual_hrl/best.pt
-search_config: outputs/gpu/outputs/all_models_seed2026/configs/search.yaml
-split: validation
-output_dir: outputs/hrl_independent_hybrid_seed2026

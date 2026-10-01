@@ -1,0 +1,101 @@
+{
+  "input": "D:\\programing\\python\\optest\u5f52\u6863\\\u51b3\u8d5b\u4f5c\u54c1\u63d0\u4ea4\u6a21\u677f\\\u64cd\u4f5c\u7cfb\u7edf\u5f00\u6e90\u521b\u65b0\u5927\u8d5b\u9879\u76ee\u8bf4\u660e\u4e66.docx",
+  "fonts_by_char_count": {
+    "\u5b8b\u4f53": 68,
+    "\u9ed1\u4f53": 4
+  },
+  "direct_run_formatting_runs": 20,
+  "direct_paragraph_formatting_paragraphs": 83,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 83,
+      "text": "\u4f5c \u54c1 \u540d \u79f0\uff1a",
+      "style": "Normal"
+    },
+    {
+      "para_index": 84,
+      "text": "   \u4f5c\u54c1\u540d",
+      "style": "Normal"
+    },
+    {
+      "para_index": 85,
+      "text": "\u53c2 \u8d5b \u961f \u4f0d\uff1a",
+      "style": "Normal"
+    },
+    {
+      "para_index": 86,
+      "text": "   \u961f\u4f0d\u540d",
+      "style": "Normal"
+    },
+    {
+      "para_index": 87,
+      "text": "\u5b8c \u6210 \u65e5 \u671f\uff1a",
+      "style": "Normal"
+    },
+    {
+      "para_index": 88,
+      "text": "2026\u5e74X\u6708",
+      "style": "Normal"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 2,
+        "text": "\u9879\u76ee\u8bf4\u660e\u4e66",
+        "style": "\u5c01\u9762\u7c7b\u578b\u6807\u9898"
+      },
+      {
+        "para_index": 3,
+        "text": "",
+        "style": "\u5c01\u9762\u6807\u9898"
+      },
+      {
+        "para_index": 5,
+        "text": "",
+        "style": "Normal"
+      },
+      {
+        "para_index": 6,
+        "text": "\u76ee \u5f55",
+        "style": "\u6807\u9898 1 \u65e0\u7ae0\u8282"
+      },
+      {
+        "para_index": 7,
+        "text": "1.\u76ee\u5f55\u5185\u5bb9\u7531word\u81ea\u52a8\u751f\u6210\uff0c\u6700\u591a\u4f7f\u7528\u4e09\u7ea7\u6807\u9898\u3002",
+        "style": "Normal"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 4,
+        "run_text": "\u6ce8\uff1a\u6587\u4ef6\u4e0d\u5f97\u51fa\u73b0\u4efb\u4f55\u5b66\u6821\u548c\u56e2\u961f\u6210\u5458\u76f8\u5173\u4fe1\u606f\uff08\u9605\u8bfb\u540e\u5220\u9664\uff09",
+        "style": "\u5c01\u9762\u6807\u9898"
+      },
+      {
+        "para_index": 7,
+        "run_text": "1.\u76ee\u5f55\u5185\u5bb9\u7531word\u81ea\u52a8\u751f\u6210\uff0c\u6700\u591a\u4f7f\u7528\u4e09\u7ea7\u6807\u9898\u3002",
+        "style": "Normal"
+      },
+      {
+        "para_index": 8,
+        "run_text": " \u7eea \u8bba",
+        "style": "Heading 1"
+      },
+      {
+        "para_index": 83,
+        "run_text": "\u4f5c \u54c1 \u540d \u79f0",
+        "style": "Normal"
+      },
+      {
+        "para_index": 83,
+        "run_text": "\uff1a",
+        "style": "Normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}
