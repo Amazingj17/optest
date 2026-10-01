@@ -1,0 +1,27 @@
+{
+  "num_scenarios": 6,
+  "methods": {
+    "heft": {
+      "mean_ratio": 1.0,
+      "mean_inference_ms": 263.8180000000527,
+      "p95_inference_ms": 738.9466999998149
+    },
+    "search_blocks": {
+      "mean_ratio": 0.9463961194010221,
+      "mean_inference_ms": 7330.165300000165,
+      "p95_inference_ms": 20309.749950000423
+    },
+    "residual_hrl": {
+      "mean_ratio": 1.0057065128411926,
+      "mean_inference_ms": 576.7114000003252,
+      "p95_inference_ms": 1440.0511499998174
+    },
+    "hybrid": {
+      "mean_ratio": 0.9463961194010221,
+      "mean_inference_ms": 8663.246249999853,
+      "p95_inference_ms": 23955.868399999872
+    }
+  },
+  "valid_schedule_rate": 1.0,
+  "scope": "fixed demonstration subset; not the full 108-scene validation score"
+}

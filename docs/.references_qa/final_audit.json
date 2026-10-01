@@ -1,0 +1,49 @@
+{
+  "references": 6,
+  "chapters_end_indexes_removed": 6,
+  "native_equations_unchanged": 7,
+  "equation_textboxes_unchanged": 7,
+  "rendered_equation_label_positions_unchanged": {
+    "（2-1）": [
+      8,
+      493.18,
+      340.13
+    ],
+    "（2-2）": [
+      8,
+      493.18,
+      165.74
+    ],
+    "（2-3）": [
+      10,
+      493.18,
+      680.38
+    ],
+    "（2-4）": [
+      11,
+      493.18,
+      418.27
+    ],
+    "（2-5）": [
+      12,
+      493.18,
+      534.91
+    ],
+    "（2-6）": [
+      12,
+      493.18,
+      511.39
+    ],
+    "（2-7）": [
+      14,
+      493.18,
+      491.11
+    ]
+  },
+  "source_unchanged": true,
+  "media_preserved": 7,
+  "changed_parts": [
+    "word/document.xml",
+    "word/styles.xml"
+  ]
+}

@@ -1,14 +1,14 @@
 {
-  "format": "cpn-hybrid-demo-v1",
-  "files": {
-    "assets/hrl_best.pt": "86da1395f7e637cce803f40b4bfc3dd8380e95914d32ddd83aefad2d4ff9811a",
-    "assets/scenarios.json": "262a68bbeaba28b1563eb2e1e324ed830568008d7d03349a22459e80cc805830",
-    "assets/template.html": "47484b8c5deffe14e41d9ef1915d44ebeb9fbaf0a10a482bd7128e1107e6ea2b",
-    "config.json": "7ee12d636b1bae0df93b275c6c7fcfd17ddc75dd32d97171c2893f196041b937",
-    "assets/graph_ppo_best.pt": "c9acd09fda8f78d3c03d435a304e0b4e7dfdb7329cc44b084af3ef98d3362ab2",
-    "assets/tier_mappo_best.pt": "9054682b0799344f332148725bc488a5774b96ff8403f1b497f7a7248aedc3fd"
-  },
-  "provenance": {
+  "created_utc": "2026-10-01T07:44:39.257643+00:00",
+  "seed": 2026,
+  "checkpoint_sha256": "86da1395f7e637cce803f40b4bfc3dd8380e95914d32ddd83aefad2d4ff9811a",
+  "checkpoint_step": 864,
+  "python": "3.12.12",
+  "torch": "2.9.1+cu130",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "device": "cpu",
+  "source": {
     "checkpoint_source": "outputs/gpu/outputs/multiseed_20260925_122243/all_models_seed2026/training/residual_hrl/best.pt",
     "checkpoint_step": 864,
     "search_config_sha256": "87be47575f42c06e19203daad2c96c35e33e4f6bd1d1c61e0fd0dbf2f2d7bf69",
@@ -33,5 +33,12 @@
       "graph_ppo": "outputs/gpu/outputs/multiseed_20260925_122243/all_models_seed2026/training/graph_ppo/best.pt",
       "tier_mappo": "outputs/gpu/outputs/multiseed_20260925_122243/all_models_seed2026/training/tier_mappo/best.pt"
     }
-  }
+  },
+  "retrained": false,
+  "test_evaluated": false,
+  "inference_timing": "candidate setup, generation, validation, selection and final replay",
+  "evaluation_wall_timing": "also includes outer environment setup and HEFT reference",
+  "audit_timing": "additional independent simulator replay; separate from inference",
+  "branch_timing": "in-process policy reset and rollout; excludes branch environment setup",
+  "elapsed_before_export_s": 53.35477869999886
 }

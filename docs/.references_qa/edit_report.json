@@ -1,0 +1,157 @@
+{
+  "source_sha256": "45d6d5b8598206ce208fd0b2f4bcd7f7cebf9b33f0078772495b9e34d2c2cce1",
+  "output": "D:\\programing\\python\\optest\\docs\\项目说明书_双系统验证更新版_参考修订版.docx",
+  "removed_blocks": [
+    {
+      "tag": "p",
+      "text": "本章参考与证据"
+    },
+    {
+      "tag": "p",
+      "text": "Topcuoglu H, Hariri S, Wu M. 2002. Performance-effective and low-complexity task scheduling for heterogeneous computing. IEEE Transactions on Parallel and Distributed Systems, 13(3): 260–274. DOI: 10.1109/71.993206."
+    },
+    {
+      "tag": "p",
+      "text": "Schulman J, Wolski F, Dhariwal P, Radford A, Klimov O. 2017. Proximal Policy Optimization Algorithms. arXiv:1707.06347."
+    },
+    {
+      "tag": "p",
+      "text": "Hochreiter S, Schmidhuber J. 1997. Long Short-Term Memory. Neural Computation, 9(8): 1735–1780."
+    },
+    {
+      "tag": "p",
+      "text": "Veličković P, Cucurull G, Casanova A, Romero A, Liò P, Bengio Y. 2018. Graph Attention Networks. ICLR. arXiv:1710.10903."
+    },
+    {
+      "tag": "p",
+      "text": "Yue Q, Tian L, Feng X, 等. 2026. CPN-HRL: a hierarchical deep reinforcement learning approach for priority-aware task scheduling in CPN enabled by cloud-edge-end environments. Journal of King Saud University Computer and Information Sciences, 38:290. DOI: 10.1007/s44443-026-00690-x."
+    },
+    {
+      "tag": "p",
+      "text": "需求依据为项目保存的 doc/赛题要求.md。数据来自 Zenodo 18927122，DOI: 10.5281/zenodo.18927122，本地数据包标注 CC-BY-4.0、Aasish Kumar Sharma。总体结果来自 docs/results/multiseed_20260925_122243/mean_std.csv，完成状态和适用范围见第 3、4 章。"
+    },
+    {
+      "tag": "p",
+      "text": "本章参考与实现定位"
+    },
+    {
+      "tag": "p",
+      "text": "Hochreiter S, Schmidhuber J. 1997. Long Short-Term Memory. Neural Computation, 9(8): 1735–1780."
+    },
+    {
+      "tag": "p",
+      "text": "Schulman J, Wolski F, Dhariwal P, Radford A, Klimov O. 2017. Proximal Policy Optimization Algorithms. arXiv:1707.06347."
+    },
+    {
+      "tag": "p",
+      "text": "Veličković P, Cucurull G, Casanova A, Romero A, Liò P, Bengio Y. 2018. Graph Attention Networks. ICLR. arXiv:1710.10903."
+    },
+    {
+      "tag": "p",
+      "text": "Topcuoglu H, Hariri S, Wu M. 2002. Performance-effective and low-complexity task scheduling for heterogeneous computing. IEEE Transactions on Parallel and Distributed Systems, 13(3): 260–274. DOI: 10.1109/71.993206."
+    },
+    {
+      "tag": "p",
+      "text": "Arabnejad H, Barbosa J G. 2014. List Scheduling Algorithm for Heterogeneous Systems by an Optimistic Cost Table. IEEE Transactions on Parallel and Distributed Systems, 25(3): 682–694. DOI: 10.1109/TPDS.2013.57."
+    },
+    {
+      "tag": "p",
+      "text": "Yue Q, Tian L, Feng X, 等. 2026. CPN-HRL: a hierarchical deep reinforcement learning approach for priority-aware task scheduling in CPN enabled by cloud-edge-end environments. Journal of King Saud University Computer and Information Sciences, 38:290. DOI: 10.1007/s44443-026-00690-x."
+    },
+    {
+      "tag": "p",
+      "text": "代码主要按模块与函数定位。时间语义见 ScheduleSimulator.candidate_timing、schedule 和 MatrixCommunicationModel.duration；观测与奖励见 CloudEdgeEndDAGEnv；模型见 HighLevelLSTMActorCritic、LowLevelGATActorCritic；更新与阶段见 PPOAgent.update、HierarchicalTrainer._episode、phases；搜索见 HEFTSafePortfolioPolicy._beam_search、_realized_critical_chain、_critical_block_moves；组合见 IndependentHybridPolicy.reset。当前版本的哈希核对记录随本章编制资料保存。"
+    },
+    {
+      "tag": "p",
+      "text": "本章实现与证据定位"
+    },
+    {
+      "tag": "p",
+      "text": "场景及资源：scenario/types.py、datasets/resource_realizations.py、scenario/resources.py、configs/generated_smoke.yaml；策略及评估：policies/base.py、evaluation/evaluator.py、env/dag_env.py、scheduling/simulator.py。"
+    },
+    {
+      "tag": "p",
+      "text": "运行入口：提交包 run_demo.py 与 src/scripts/run_hybrid_demo.py；工程 scripts/run_server_comparison.py、scripts/evaluate_independent_hybrid.py、scripts/verify_platform.py；平台配方 deploy/openeuler/Dockerfile。以上模块路径除特别说明外相对于 Python 工程。"
+    },
+    {
+      "tag": "p",
+      "text": "演示证据见提交包 demo/manifest.json、demo/verified_comparison/results.json、tests/demo_acceptance.json、tests/comparison_ui_check.json 和 tests/comparison_preview.png。新增平台证据位于 docs/platform/openeuler_vm_20260930/ 与 docs/platform/openkylin_vm_20260930/，包括配置、依赖、训练汇总和逐场景结果。本次修订核对已有产物，未重新启动训练。"
+    },
+    {
+      "tag": "p",
+      "text": "本章证据索引"
+    },
+    {
+      "tag": "p",
+      "text": "正式性能数字来自 multiseed_20260925_122243 批次；双系统短训练数字来自 2026 年 9 月 30 日的平台归档。下列路径均相对于项目根目录，* 表示 2026、2027、2028 三个种子。本次修订只核对已保存的结果，未覆盖原实验输出。"
+    },
+    {
+      "tag": "p",
+      "text": "为缩短定位路径，以下用 R 表示 docs/results/multiseed_20260925_122243/；用 B 表示 outputs/gpu/outputs/multiseed_20260925_122243/；用 E 表示 docs/platform/openeuler_vm_20260930/；用 K 表示 docs/platform/openkylin_vm_20260930/。"
+    },
+    {
+      "tag": "tbl",
+      "text": "证据定位支撑内容汇总与预算R/mean_std.csv；per_seed.csv；training_budget.csv；verification.json总体分数、种子标准差、训练总量及验收范围原始场景记录B/all_models_seed*/comparison/per_scene_all.csv；B/hybrid_seed*/per_scene_all.csv七方法总体复核；规模和资源分组；固定案例模型选择R/hrl_validation_history.csv；B/all_models_seed*/training/初始验证、各轮表现及最佳 checkpoint归因与配对统计B/hybrid_seed*/attribution.json；paired_statistics.json；candidate_audit.csv去 HRL 分支增量；基础 DAG bootstrap；胜负统计配置与重放B/hybrid_seed*/provenance.json；model_config.yaml；search_config.yaml；candidate_schedules.jsonl权重和配置来源、计时范围及候选序列openEuler 平台E/acceptance.json；pytest.xml；environment.json；training_summary.json；replay_per_scene.csv188 项测试、六阶段通过、短训练与重载一致性openKylin 平台K/README.md；training_summary.json；hrl_validation_summary.json；hrl_per_scene.csv；config.yaml短训练、HRL/HEFT 数值及环境配置；测试和重载的说明记录演示检查CPN-HRL-DAG_提交版/tests/demo_acceptance.json；comparison_ui_check.json六场景、四方法和 24 次界面时间线检查划分与批次环境data/manifests/grapheonrl_mixed_iid_seed7.json；B/run_three_seeds.sh；pip_freeze.txt；source_sha256.json基础 DAG 隔离、软件环境及批次冻结约束"
+    },
+    {
+      "tag": "p",
+      "text": "本轮写作复核读取了七种方法的 2268 条种子与场景记录，重新计算总体、规模和资源分组均值。与已归档总体均值逐项比较后，误差小于 10⁻¹²。这项检查验证了统计转录的一致性，未重新训练、执行调度或开展独立 test 验证。"
+    },
+    {
+      "tag": "p",
+      "text": "HEFT 算法参考：Topcuoglu H, Hariri S, Wu M. 2002. Performance-effective and low-complexity task scheduling for heterogeneous computing. IEEE Transactions on Parallel and Distributed Systems, 13(3): 260–274. DOI: 10.1109/71.993206。"
+    },
+    {
+      "tag": "p",
+      "text": "本章证据定位"
+    },
+    {
+      "tag": "p",
+      "text": "约束与缓存测试见 tests/test_simulator.py、test_environment.py、test_hybrid_demo.py、test_advanced_search.py。训练一致性测试见 tests/test_stage1_diagnostics.py、test_ppo_mask.py、test_ppo_mode.py。组合与平台测试见 tests/test_independent_hybrid.py、test_platform_acceptance.py。以上文件名以项目 tests/ 为基准。本章核对了测试断言，未重新执行全量测试。"
+    },
+    {
+      "tag": "p",
+      "text": "正式数值见 docs/results/multiseed_20260925_122243/ 下的 hrl_validation_history.csv、hybrid_attribution_by_seed.csv 和 mean_std.csv。双系统记录见 docs/platform/openeuler_vm_20260930/ 与 docs/platform/openkylin_vm_20260930/。演示状态见提交包 tests/demo_acceptance.json 与 comparison_ui_check.json。统计口径和证据范围与第 3、4 章一致。"
+    },
+    {
+      "tag": "p",
+      "text": "本章证据定位"
+    },
+    {
+      "tag": "p",
+      "text": "正式性能与训练结论来自 docs/results/multiseed_20260925_122243/ 下的 mean_std.csv、hrl_validation_history.csv 和 hybrid_attribution_by_seed.csv。双系统与演示结论采用第 3、4 章列出的运行记录。本章汇总前文结果，不新增实验或部署结论。"
+    }
+  ],
+  "body_citation_edits": [
+    {
+      "before": "HEFT 根据任务优先级和异构节点上的预计完成时间进行列表调度，是本项目采用的确定性参考方法（Topcuoglu 等，2002）。它的规则清晰，适合作为统一比较基准。固定排序和局部放置也有局限，难以覆盖任务顺序、通信和资源竞争的所有组合。本项目将 HEFT 用作基线、学习先验和完整候选。",
+      "after": "Topcuoglu 等（2002）提出的 HEFT 根据任务优先级和异构节点上的预计完成时间进行列表调度，是本项目采用的确定性参考方法。它的规则清晰，适合作为统一比较基准。固定排序和局部放置也有局限，难以覆盖任务顺序、通信和资源竞争的所有组合。本项目将 HEFT 用作基线、学习先验和完整候选。"
+    },
+    {
+      "before": "学习方法尝试从场景和调度状态中学习决策偏好。PPO 用于策略更新（Schulman 等，2017），LSTM 和 GAT 分别用于表示序列和图关系（Hochreiter 和 Schmidhuber，1997；Veličković 等，2018）。CPN-HRL 采用高层 LSTM-PPO、低层 GAT-PPO 的分层结构，为本项目提供了参考。原文研究动态到达、优先级和双队列问题；本项目将其适配到离线 DAG、前驱约束和 makespan 目标（Yue 等，2026）。",
+      "after": "学习方法尝试从场景和调度状态中学习决策偏好。Schulman 等（2017）提出的 PPO 用于策略更新，Hochreiter 和 Schmidhuber（1997）提出的 LSTM 与 Veličković 等（2018）提出的 GAT 分别用于表示序列和图关系。Yue 等（2026）提出的 CPN-HRL 采用高层 LSTM-PPO、低层 GAT-PPO 的分层结构，为本项目提供了参考。原文研究动态到达、优先级和双队列问题；本项目将其适配到离线 DAG、前驱约束和 makespan 目标。"
+    },
+    {
+      "before": "搜索分支使用 HEFTSafePortfolioPolicy。它保留 HEFT，并生成 PEFT 相关候选、通信权重变体、有限偏差和随机扰动等多种完整候选，随后执行关键任务局部改动、beam 扩展和关键块修复。HEFT 参考 Topcuoglu 等（2002）。这些启发式候选用于提出调度，最终优劣由真实配置下的统一模拟器评分。候选生成时的加权估计有别于最终 makespan。",
+      "after": "搜索分支使用 HEFTSafePortfolioPolicy。它保留 HEFT，并生成 Arabnejad 和 Barbosa（2014）提出的 PEFT 相关候选、通信权重变体、有限偏差和随机扰动等多种完整候选，随后执行关键任务局部改动、beam 扩展和关键块修复。HEFT 参考 Topcuoglu 等（2002）。这些启发式候选用于提出调度，最终优劣由真实配置下的统一模拟器评分。候选生成时的加权估计有别于最终 makespan。"
+    },
+    {
+      "before": "CPN-HRL 原文研究动态任务到达、优先级、截止期和双队列机制，采用高层 LSTM-PPO 与低层 GAT-PPO 分解决策（Yue 等，2026）。本项目参考这一分层思路，为离线 DAG 建立前驱约束、插入时间线和 makespan 奖励。原文的动态双队列、多目标收益和实验数字未沿用。",
+      "after": "Yue 等（2026）提出的 CPN-HRL 研究动态任务到达、优先级、截止期和双队列机制，采用高层 LSTM-PPO 与低层 GAT-PPO 分解决策。本项目参考这一分层思路，为离线 DAG 建立前驱约束、插入时间线和 makespan 奖励。原文的动态双队列、多目标收益和实验数字未沿用。"
+    },
+    {
+      "before": "平台适配保留 openEuler 24.03 LTS-SP4 容器配方，并新增 openEuler 与 openKylin 的 x86_64 虚拟机运行记录。两系统均使用 CPU 单线程配置，完成短训练和验证集评估。openEuler 验收入口依次保存环境信息，检查依赖和数据，执行测试、短训练、权重重载与 HEFT 验证。以下命令适用于已准备好的 openEuler 虚拟机，输出目录应尚不存在。openKylin 的实际配置与结果见本章证据定位。",
+      "after": "平台适配保留 openEuler 24.03 LTS-SP4 容器配方，并新增 openEuler 与 openKylin 的 x86_64 虚拟机运行记录。两系统均使用 CPU 单线程配置，完成短训练和验证集评估。openEuler 验收入口依次保存环境信息，检查依赖和数据，执行测试、短训练、权重重载与 HEFT 验证。以下命令适用于已准备好的 openEuler 虚拟机，输出目录应尚不存在。openKylin 的实际配置与结果见第 4 章。"
+    }
+  ],
+  "bibliography": {
+    "Topcuoglu": "Topcuoglu H, Hariri S, Wu M. 2002. Performance-effective and low-complexity task scheduling for heterogeneous computing. IEEE Transactions on Parallel and Distributed Systems, 13(3): 260–274. DOI: 10.1109/71.993206.",
+    "Schulman": "Schulman J, Wolski F, Dhariwal P, Radford A, Klimov O. 2017. Proximal Policy Optimization Algorithms. arXiv:1707.06347.",
+    "Hochreiter": "Hochreiter S, Schmidhuber J. 1997. Long Short-Term Memory. Neural Computation, 9(8): 1735–1780.",
+    "Veličković": "Veličković P, Cucurull G, Casanova A, Romero A, Liò P, Bengio Y. 2018. Graph Attention Networks. ICLR. arXiv:1710.10903.",
+    "Yue": "Yue Q, Tian L, Feng X, 等. 2026. CPN-HRL: a hierarchical deep reinforcement learning approach for priority-aware task scheduling in CPN enabled by cloud-edge-end environments. Journal of King Saud University Computer and Information Sciences, 38:290. DOI: 10.1007/s44443-026-00690-x.",
+    "Arabnejad": "Arabnejad H, Barbosa J G. 2014. List Scheduling Algorithm for Heterogeneous Systems by an Optimistic Cost Table. IEEE Transactions on Parallel and Distributed Systems, 25(3): 682–694. DOI: 10.1109/TPDS.2013.57."
+  },
+  "equations_and_textbox_anchors_unchanged": true
+}
