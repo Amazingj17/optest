@@ -341,7 +341,21 @@ python scripts/verify_platform.py --output outputs/platform_acceptance_new --exe
 ## 常见问题
 
 - **提示找不到 `cpn_hrl_dag`**：确认使用当前虚拟环境的 Python，并在项目根目录执行 `python -m pip install -e "./src[train,analysis,dev]"`。
+
 - **提示缺少 Zenodo 数据**：完整训练需要手动准备原始压缩包；仅体验内置演示可以直接使用根目录的 `run_demo.py`。
+
 - **出现 CUDA 不可用错误**：检查 PyTorch 和驱动，或复制配置并设置 `device: cpu`、新的 `output_dir`。完整训练在 CPU 上可能耗时较长。
+
 - **演示资源哈希不匹配**：恢复与 `demo/manifest.json` 匹配的场景、权重和配置；主动更换资源时，应使用 `scripts/prepare_hybrid_demo.py` 重新生成演示包。
+
 - **输出目录已存在**：为新运行指定空目录或新的路径，避免与已有结果混用。
+
+## 演示视频
+
+由于本项目演示视频过大，因此按照大赛要求采用网盘链接形式提供
+
+具体链接：
+
+通过网盘分享的文件：演示视频.mp4
+链接: https://pan.baidu.com/s/1ekoLk1HXradGP4BRYFr8SQ 提取码: w59d 
+--来自百度网盘超级会员v7的分享
